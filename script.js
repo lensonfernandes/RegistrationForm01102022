@@ -128,7 +128,7 @@ let lastNameFunction = () => {
     let password =  document.getElementById("password-id").value;
     let confirmPassword =  document.getElementById("confirmPasswordId").value;
 
-    if(password===confirmPassword)
+    if(password===confirmPassword && confirmPassword!="")
         confirmPasswordStatus= true;
 
         if(confirmPasswordStatus)
