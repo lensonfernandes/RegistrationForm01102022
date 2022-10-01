@@ -1,5 +1,10 @@
 
-
+let firstNameStatus = false;
+let lastNameStatus = false;
+let emailStatus = false;
+let passwordStatus = false;
+let confirmPasswordStatus = false;
+let tNCStatus = false;
 
 let firstNameFunction = () => {
    let firstName =  document.getElementById("firstNameId").value;
@@ -9,11 +14,13 @@ let firstNameFunction = () => {
    {
     document.getElementById('firstName-valid').style.display= "block";
     document.getElementById('firstName-invalid').style.display= "none";
+    firstNameStatus = true;
    }
    else
    {
     document.getElementById('firstName-valid').style.display= "none";
     document.getElementById('firstName-invalid').style.display= "block";
+    firstNameStatus = false;
    }
 
 }
@@ -27,18 +34,21 @@ let lastNameFunction = () => {
     {
      document.getElementById('lastName-valid').style.display= "block";
      document.getElementById('lastName-invalid').style.display= "none";
+     lastNameStatus = true;
+     
     }
     else
     {
      document.getElementById('lastName-valid').style.display= "none";
      document.getElementById('lastName-invalid').style.display= "block";
+     lastNameStatus = false;
     }
  
  }
 
 
  let emailIdFunction = () => {
-    let emailStatus = false;
+     emailStatus = false;
 
 
     let email =  document.getElementById("emailId").value;
@@ -67,11 +77,13 @@ let lastNameFunction = () => {
     {
      document.getElementById('email-valid').style.display= "block";
      document.getElementById('email-invalid').style.display= "none";
+     emailStatus=true;
     }
     else
     {
      document.getElementById('email-valid').style.display= "none";
      document.getElementById('email-invalid').style.display= "block";
+     emailStatus=false;
     }
  }
 
@@ -81,7 +93,7 @@ let lastNameFunction = () => {
     let password =  document.getElementById("password-id").value;
     console.log(password);
 
-    let passwordStatus = false;
+     passwordStatus = false;
 
     if(password.length >= 8)
     {
@@ -99,17 +111,19 @@ let lastNameFunction = () => {
     {
      document.getElementById('password-valid').style.display= "block";
      document.getElementById('password-invalid').style.display= "none";
+     passwordStatus = true;
     }
     else
     {
      document.getElementById('password-valid').style.display= "none";
      document.getElementById('password-invalid').style.display= "block";
+     passwordStatus = false;
     }
  }
 
 
  let confirmPasswordFunction = () => {
-    let confirmPasswordStatus = false;
+     confirmPasswordStatus = false;
 
     let password =  document.getElementById("password-id").value;
     let confirmPassword =  document.getElementById("confirmPasswordId").value;
@@ -121,17 +135,19 @@ let lastNameFunction = () => {
         {
          document.getElementById('confirm-password-valid').style.display= "block";
          document.getElementById('confirm-password-invalid').style.display= "none";
+         confirmPasswordStatus= true;
         }
         else
         {
          document.getElementById('confirm-password-valid').style.display= "none";
          document.getElementById('confirm-password-invalid').style.display= "block";
+         confirmPasswordStatus= false;
         }
 
  }
 
  let tNCFunction  = () => {
-    let tNCStatus = false;
+     tNCStatus = false;
 
     let tNC = document.getElementById("tNCId").checked;
     tNCStatus = tNC;
@@ -146,4 +162,24 @@ let lastNameFunction = () => {
      
      document.getElementById('invalid-tNC').style.display= "block";
     }
+ }
+
+ let validateAllFunction = () => {
+    firstNameFunction();
+    lastNameFunction();
+    emailIdFunction();
+    passwordFunction();
+    confirmPasswordFunction();
+    tNCFunction();
+
+    console.log(firstNameStatus)
+    console.log(lastNameStatus)
+    console.log(emailStatus)
+    console.log(passwordStatus)
+    console.log(confirmPasswordStatus)
+    console.log(tNCStatus)
+    if(firstNameStatus && lastNameStatus && emailStatus && passwordStatus && confirmPasswordStatus && tNCStatus)
+        alert('Your details have been saved successfully!')
+
+
  }
