@@ -164,6 +164,20 @@ let lastNameFunction = () => {
     }
  }
 
+ let removeAllValidationText = () =>{
+    document.getElementById('firstName-invalid').style.display= "none";
+    document.getElementById('firstName-valid').style.display= "none";
+    document.getElementById('lastName-invalid').style.display= "none";
+    document.getElementById('lastName-valid').style.display= "none";
+    document.getElementById('email-invalid').style.display= "none";
+    document.getElementById('email-valid').style.display= "none";
+    document.getElementById('password-invalid').style.display= "none";
+    document.getElementById('password-valid').style.display= "none";
+    document.getElementById('confirm-password-invalid').style.display= "none";
+    document.getElementById('confirm-password-valid').style.display= "none";
+    document.getElementById('invalid-tNC').style.display= "none";
+ }
+
  let validateAllFunction = () => {
     firstNameFunction();
     lastNameFunction();
@@ -179,7 +193,12 @@ let lastNameFunction = () => {
     console.log(confirmPasswordStatus)
     console.log(tNCStatus)
     if(firstNameStatus && lastNameStatus && emailStatus && passwordStatus && confirmPasswordStatus && tNCStatus)
+    {
         alert('Your details have been saved successfully!')
+        document.getElementById("form-id").reset();
+        removeAllValidationText();
+
+    }
 
 
  }
