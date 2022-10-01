@@ -74,3 +74,35 @@ let lastNameFunction = () => {
      document.getElementById('email-invalid').style.display= "block";
     }
  }
+
+
+
+ let passwordFunction = () => {
+    let password =  document.getElementById("password-id").value;
+    console.log(password);
+
+    let passwordStatus = false;
+
+    if(password.length >= 8)
+    {
+        if(password.includes('$') || password.includes('#') || password.includes('@'))
+        {
+            if(password.includes('0')||password.includes('1')||password.includes('2')||password.includes('3')||password.includes('4'))
+            {
+                passwordStatus = true;
+            }
+        }
+    }
+
+    
+    if(passwordStatus)
+    {
+     document.getElementById('password-valid').style.display= "block";
+     document.getElementById('password-invalid').style.display= "none";
+    }
+    else
+    {
+     document.getElementById('password-valid').style.display= "none";
+     document.getElementById('password-invalid').style.display= "block";
+    }
+ }

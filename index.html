@@ -63,15 +63,15 @@
 
 
     <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
+        <label for="password-id" class="form-label">Password</label>
         <div class="input-group"> 
             <span class="input-group-text" id="inputGroupPrepend">*</span>
-        <input type="password" class="form-control" id="inputPassword4">
+        <input type="password" class="form-control" id="password-id" onkeyup="passwordFunction()">
         </div>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" id="password-invalid">
             Please enter a valid password
           </div>
-          <div class="valid-feedback">
+          <div class="valid-feedback" id="password-valid">
               Looks good!
             </div>
       </div>
