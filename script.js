@@ -106,3 +106,26 @@ let lastNameFunction = () => {
      document.getElementById('password-invalid').style.display= "block";
     }
  }
+
+
+ let confirmPasswordFunction = () => {
+    let confirmPasswordStatus = false;
+
+    let password =  document.getElementById("password-id").value;
+    let confirmPassword =  document.getElementById("confirmPasswordId").value;
+
+    if(password===confirmPassword)
+        confirmPasswordStatus= true;
+
+        if(confirmPasswordStatus)
+        {
+         document.getElementById('confirm-password-valid').style.display= "block";
+         document.getElementById('confirm-password-invalid').style.display= "none";
+        }
+        else
+        {
+         document.getElementById('confirm-password-valid').style.display= "none";
+         document.getElementById('confirm-password-invalid').style.display= "block";
+        }
+
+ }
