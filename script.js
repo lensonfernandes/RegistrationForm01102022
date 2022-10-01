@@ -129,3 +129,21 @@ let lastNameFunction = () => {
         }
 
  }
+
+ let tNCFunction  = () => {
+    let tNCStatus = false;
+
+    let tNC = document.getElementById("tNCId").checked;
+    tNCStatus = tNC;
+
+    if(tNCStatus)
+    {
+     
+     document.getElementById('invalid-tNC').style.display= "none";
+    }
+    else
+    {
+     
+     document.getElementById('invalid-tNC').style.display= "block";
+    }
+ }

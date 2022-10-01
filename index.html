@@ -97,14 +97,14 @@
 
     <div class="col-12">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-        <label class="form-check-label" for="invalidCheck">
+        <input class="form-check-input" type="checkbox" value="" id="tNCId" required onchange="tNCFunction()">
+        <label class="form-check-label" for="tNCId">
           Agree to terms and conditions
         </label>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" id="invalid-tNC">
           You must agree before submitting.
         </div>
-      </div>
+       
     </div>
     <div class="col-12 text-center">
       <button class="btn btn-dark" type="submit">Submit form</button>
