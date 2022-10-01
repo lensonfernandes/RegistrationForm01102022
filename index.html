@@ -12,19 +12,21 @@
     
     
     <!-- NavBar -->
-<nav class="navbar bg-dark  d-flex justify-content-center">
-    
+<nav class="navbar bg-dark  d-flex justify-content-center">    
       <div class="display-4 text-white text-center  ">Registration Form</div>
-
-  </nav>
+</nav>
     
-<!-- form  -->
+<!-- Form  -->
 
-<div class="container mt-3">
+<div class="container mt-3 w-50">
+
+    <!-- FirstName Field -->
 <form class="row g-3 needs-validation" novalidate id="form-id"> 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <label for="firstNameId" class="form-label">First name</label>
       <input type="text" class="form-control" id="firstNameId" value="" required onkeyup="firstNameFunction()">
+
+      <!-- Validation messages -->
       <div class="valid-feedback" id="firstName-valid">
         Looks good!
       </div>
@@ -33,9 +35,12 @@
       </div>
       
     </div>
-    <div class="col-md-4">
+
+    <!-- LastName Field -->
+    <div class="col-md-3">
       <label for="lastNameId" class="form-label">Last name</label>
       <input type="text" class="form-control" id="lastNameId" value="" required onkeyup="lastNameFunction()">
+      <!-- Validation messages -->
       <div class="valid-feedback" id="lastName-valid">
         Looks good!
       </div>
@@ -45,11 +50,13 @@
     </div>
 
 
-    <div class="col-md-4">
+    <!-- Email Field  -->
+    <div class="col-md-6">
       <label for="emailId" class="form-label">Email</label>
       <div class="input-group has-validation">
         <span class="input-group-text" id="inputGroupPrepend">@</span>
         <input type="text" class="form-control" id="emailId" aria-describedby="inputGroupPrepend" required onkeyup="emailIdFunction()">
+        <!-- Validation messages -->
         <div class="invalid-feedback" id="email-invalid">
           Please enter a valid email address.
         </div>
@@ -61,6 +68,7 @@
     
 
 
+    <!-- Password Field  -->
 
     <div class="col-md-6">
         <label for="password-id" class="form-label">Password</label>
@@ -68,6 +76,7 @@
             <span class="input-group-text" id="inputGroupPrepend">*</span>
         <input type="password" class="form-control" id="password-id" onkeyup="passwordFunction()">
         </div>
+        <!-- Validation messages -->
         <div class="invalid-feedback" id="password-invalid">
             Please enter a valid password
           </div>
@@ -77,12 +86,14 @@
       </div>
 
 
+      <!-- Confirm Password field  -->
       <div class="col-md-6">
         <label for="confirmPasswordId" class="form-label">Confirm Password</label>
         <div class="input-group"> 
             <span class="input-group-text" id="confirmPasswordId2">*</span>
         <input type="password" class="form-control" id="confirmPasswordId" onkeyup="confirmPasswordFunction()">
         </div>
+        <!-- Validation messages -->
         <div class="invalid-feedback" id="confirm-password-invalid">
             Password and confirm password don't match
           </div>
@@ -93,7 +104,7 @@
 
 
 
-
+ <!-- Terms and Condition Checkbox  -->
 
     <div class="col-12">
       <div class="form-check">
@@ -101,11 +112,14 @@
         <label class="form-check-label" for="tNCId">
           Agree to terms and conditions
         </label>
+        <!-- Validation message -->
         <div class="invalid-feedback" id="invalid-tNC">
           You must agree before submitting.
         </div>
        
     </div>
+
+    <!-- Submit button  -->
     <div class="col-12 text-center">
       <button class="btn btn-dark" type="button" onclick="validateAllFunction()">Submit form</button>
     </div>

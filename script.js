@@ -1,4 +1,5 @@
 
+// Flags to keep track of Status of individual fields
 let firstNameStatus = false;
 let lastNameStatus = false;
 let emailStatus = false;
@@ -6,9 +7,13 @@ let passwordStatus = false;
 let confirmPasswordStatus = false;
 let tNCStatus = false;
 
+
+// Function to validate First Name
 let firstNameFunction = () => {
    let firstName =  document.getElementById("firstNameId").value;
-   console.log(firstName)
+  
+
+   //First Name:  At least 3 characters
 
    if(firstName.length>=3)
    {
@@ -24,12 +29,14 @@ let firstNameFunction = () => {
    }
 
 }
-
+// Function to validate Last Name
 
 let lastNameFunction = () => {
     let lastName =  document.getElementById("lastNameId").value;
-    console.log(lastName)
+    
  
+//     Last Name: At least 3 characters
+
     if(lastName.length>=3)
     {
      document.getElementById('lastName-valid').style.display= "block";
@@ -46,24 +53,24 @@ let lastNameFunction = () => {
  
  }
 
-
+//Function to validate Email
  let emailIdFunction = () => {
      emailStatus = false;
 
 
     let email =  document.getElementById("emailId").value;
-    console.log(email)
+    
 
-    if(email!="")
+    if(email!="") //Email entered (not left blank)
     {
-        if(email.includes('@')&& email.includes('.'))
+        if(email.includes('@')&& email.includes('.')) //Should contain ‘@’ and ‘.’
         {
             let lastIndexOfDot = email.lastIndexOf('.');
             let tempString = email.slice(lastIndexOfDot)
-            console.log(`temp string is ${tempString}`)
-            if(tempString.length>=3)
+           
+            if(tempString.length>=3)  //After last ., there should be at least be 2 characters
             {
-                if(email.charAt(0)!='@')
+                if(email.charAt(0)!='@') //First character cannot be @
                 {
                     emailStatus=true;
                 }
@@ -88,18 +95,18 @@ let lastNameFunction = () => {
  }
 
 
-
+//Function to validate Password
  let passwordFunction = () => {
     let password =  document.getElementById("password-id").value;
-    console.log(password);
+   
 
      passwordStatus = false;
 
-    if(password.length >= 8)
+    if(password.length >= 8) //At least 8 characters
     {
-        if(password.includes('$') || password.includes('#') || password.includes('@'))
+        if(password.includes('$') || password.includes('#') || password.includes('@')) //At least one special character used from [$, #, @]
         {
-            if(password.includes('0')||password.includes('1')||password.includes('2')||password.includes('3')||password.includes('4'))
+            if(password.includes('0')||password.includes('1')||password.includes('2')||password.includes('3')||password.includes('4')) //At least one number used from [0, 1, 2, 3, 4]
             {
                 passwordStatus = true;
             }
@@ -121,14 +128,14 @@ let lastNameFunction = () => {
     }
  }
 
-
+//Function to validate Confirm password
  let confirmPasswordFunction = () => {
      confirmPasswordStatus = false;
 
     let password =  document.getElementById("password-id").value;
     let confirmPassword =  document.getElementById("confirmPasswordId").value;
 
-    if(password===confirmPassword && confirmPassword!="")
+    if(password===confirmPassword && confirmPassword!="") //Should match Password and confirm password should not be empty
         confirmPasswordStatus= true;
 
         if(confirmPasswordStatus)
@@ -146,11 +153,13 @@ let lastNameFunction = () => {
 
  }
 
+ //Function to check Terms and Condition
+
  let tNCFunction  = () => {
      tNCStatus = false;
 
     let tNC = document.getElementById("tNCId").checked;
-    tNCStatus = tNC;
+    tNCStatus = tNC;  //Use the checkbox value
 
     if(tNCStatus)
     {
@@ -186,12 +195,7 @@ let lastNameFunction = () => {
     confirmPasswordFunction();
     tNCFunction();
 
-    console.log(firstNameStatus)
-    console.log(lastNameStatus)
-    console.log(emailStatus)
-    console.log(passwordStatus)
-    console.log(confirmPasswordStatus)
-    console.log(tNCStatus)
+    
     if(firstNameStatus && lastNameStatus && emailStatus && passwordStatus && confirmPasswordStatus && tNCStatus)
     {
         alert('Your details have been saved successfully!')
