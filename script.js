@@ -35,3 +35,42 @@ let lastNameFunction = () => {
     }
  
  }
+
+
+ let emailIdFunction = () => {
+    let emailStatus = false;
+
+
+    let email =  document.getElementById("emailId").value;
+    console.log(email)
+
+    if(email!="")
+    {
+        if(email.includes('@')&& email.includes('.'))
+        {
+            let lastIndexOfDot = email.lastIndexOf('.');
+            let tempString = email.slice(lastIndexOfDot)
+            console.log(`temp string is ${tempString}`)
+            if(tempString.length>=3)
+            {
+                if(email.charAt(0)!='@')
+                {
+                    emailStatus=true;
+                }
+            }
+            
+        }
+    }
+
+ 
+    if(emailStatus)
+    {
+     document.getElementById('email-valid').style.display= "block";
+     document.getElementById('email-invalid').style.display= "none";
+    }
+    else
+    {
+     document.getElementById('email-valid').style.display= "none";
+     document.getElementById('email-invalid').style.display= "block";
+    }
+ }
